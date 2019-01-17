@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
-public class Vista extends JFrame {
+public class Bienvenida extends JFrame {
 
 	private JPanel PanelBienvenida;
 
@@ -32,17 +32,12 @@ public class Vista extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Vista() {
+	public Bienvenida() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		PanelBienvenida = new JPanel();
 		PanelBienvenida.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(PanelBienvenida);
 		PanelBienvenida.setLayout(null);
-		
-		JButton btnBienvenida = new JButton("");
-		btnBienvenida.setBounds(0, 0, 434, 271);
-		btnBienvenida.setIcon(new ImageIcon("D:\\RETO3\\Reto3Terminal\\logo-termibus.png"));
-		PanelBienvenida.add(btnBienvenida);
 	}
 }
