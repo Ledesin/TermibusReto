@@ -1,16 +1,16 @@
 package Vista;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
-import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
-import java.awt.Color;
-import javax.swing.UIManager;
-import javax.swing.JButton;
-import java.awt.Font;
+import javax.swing.JTextField;
 
 public class Login extends JPanel {
 	private JTextField textFieldDNI;
@@ -26,8 +26,8 @@ public class Login extends JPanel {
 	private JLabel lblCrearPass;
 	private JTextField textFieldLoginDNI;
 	private JTextField textFieldLoginPass;
-	private JButton btnLogin;
-	private JButton btnRegistro;
+	public JButton btnLogin;
+	public JButton btnRegistro;
 	private JLabel lblLoginDNI;
 	private JLabel lblPasswordLogin;
 	private JLabel lblNewLabel;
