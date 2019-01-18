@@ -13,6 +13,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class Login extends JPanel {
+	
 	private JTextField textFieldDNI;
 	private JTextField textFieldNombre;
 	private JTextField textFieldApellidos;
@@ -33,9 +34,6 @@ public class Login extends JPanel {
 	private JLabel lblNewLabel;
 	private JLabel lblLogin;
 
-	/**
-	 * Create the panel.
-	 */
 	public Login() {
 		setLayout(null);
 		
@@ -143,9 +141,8 @@ public class Login extends JPanel {
 		JLabel lblFondoLogin = new JLabel("fondo");
 		lblFondoLogin.setBackground(new Color(0, 102, 255));
 		lblFondoLogin.setIcon(new ImageIcon(Login.class.getResource("/imagenes/luzazul.jpeg")));
-		lblFondoLogin.setBounds(10, 11, 440, 289);
+		lblFondoLogin.setBounds(0, 0, 450, 300);
 		add(lblFondoLogin);
-
 		
 	}
 }

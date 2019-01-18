@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Bienvenida extends JPanel {
+	
 	public JButton btnBienvenida = new JButton("");
 	
 	public Bienvenida() {
