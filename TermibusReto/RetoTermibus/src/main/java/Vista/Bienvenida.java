@@ -20,8 +20,6 @@ public class Bienvenida extends JPanel {
 		lblBienvenida2.setBounds(143, 176, 131, 21);
 		add(lblBienvenida2);
 		
-		
-		btnBienvenida.setSelectedIcon(null);
 		btnBienvenida.setIcon(new ImageIcon(Bienvenida.class.getResource("/imagenes/luzazul.jpeg")));
 		btnBienvenida.setBounds(0, 0, 450, 300);
 		add(btnBienvenida);

@@ -22,8 +22,7 @@ public class Controlador {
 				//String lineas = modelo.linea.ObtenerLineas();
 				
 				vista.ventana.setContentPane(vista.login);
-				vista.ventana.setVisible(true);
-				
+				vista.ventana.setVisible(true);				
 				//.panelLinea.MostrarLineas(lineas);
 			}
 		});
