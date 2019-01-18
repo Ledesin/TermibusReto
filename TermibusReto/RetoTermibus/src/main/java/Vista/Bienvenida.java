@@ -5,16 +5,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class bienvenida extends JPanel {
+public class Bienvenida extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public bienvenida() {
+	public Bienvenida() {
 		setLayout(null);
 		
 		JLabel lblBienvenida1 = new JLabel("Logo");
-		lblBienvenida1.setIcon(new ImageIcon(bienvenida.class.getResource("/imagenes/logo-termibus.png")));
+		lblBienvenida1.setIcon(new ImageIcon(Bienvenida.class.getResource("/imagenes/logo-termibus.png")));
 		lblBienvenida1.setBounds(75, 48, 303, 117);
 		add(lblBienvenida1);
 		
@@ -24,7 +24,7 @@ public class bienvenida extends JPanel {
 		
 		JButton btnBienvenida = new JButton("");
 		btnBienvenida.setSelectedIcon(null);
-		btnBienvenida.setIcon(new ImageIcon(bienvenida.class.getResource("/imagenes/luzazul.jpeg")));
+		btnBienvenida.setIcon(new ImageIcon(Bienvenida.class.getResource("/imagenes/luzazul.jpeg")));
 		btnBienvenida.setBounds(0, 0, 450, 300);
 		add(btnBienvenida);
 		
