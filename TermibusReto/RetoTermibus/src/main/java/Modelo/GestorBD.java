@@ -13,6 +13,7 @@ public class GestorBD {
 	private PreparedStatement preparedstatement = null;
 	private ResultSet resultSet = null;
 	
+<<<<<<< HEAD
 	public GestorBD() {
 		try {
 			
@@ -32,6 +33,24 @@ public class GestorBD {
 		catch(Exception e) {e.printStackTrace();}
 			
 	}	
+=======
+	public void gestorDB() {
+		connect=null;
+	}
+	public void conectar() throws Exception {
+	    try {
+	        // This will load the MySQL driver, each DB has its own driver
+	        Class.forName("com.mysql.cj.jdbc.Driver");
+	        
+	        // Setup the connection with the DB
+	        connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/termibus?serverTimezone=UTC","root","elorrieta");
+	        Statement sentencia = connect.createStatement();
+	       
+	    } catch (Exception e) {
+	        
+	    	e.printStackTrace();
+	    } 
+>>>>>>> cf87fd3fbcb20408faa85c57297a512e288f302a
 	
 	public void insertarUsuario() {
 		try {
