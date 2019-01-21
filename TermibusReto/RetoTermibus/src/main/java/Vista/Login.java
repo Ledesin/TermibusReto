@@ -14,25 +14,25 @@ import javax.swing.JTextField;
 
 public class Login extends JPanel {
 	
-	private JTextField textFieldDNI;
-	private JTextField textFieldNombre;
-	private JTextField textFieldApellidos;
-	private JTextField textFieldFecha_nac;
-	private JPasswordField passwordFieldCrearPass;
-	private JLabel lblDNI;
-	private JLabel lblNombre;
-	private JLabel lblApellidos;
-	private JLabel lblFecha_nac;
-	private JLabel lblSexo;
-	private JLabel lblCrearPass;
-	private JTextField textFieldLoginDNI;
-	private JTextField textFieldLoginPass;
+	public JTextField textFieldDNI;
+	public JTextField textFieldNombre;
+	public JTextField textFieldApellidos;
+	public JTextField textFieldFecha_nac;
+	public JPasswordField passwordFieldCrearPass;
+	public JTextField textFieldLoginDNI;
+	public JTextField textFieldLoginPass;
 	public JButton btnLogin;
 	public JButton btnRegistro;
 	private JLabel lblLoginDNI;
 	private JLabel lblPasswordLogin;
 	private JLabel lblNewLabel;
 	private JLabel lblLogin;
+	private JLabel lblDNI;
+	private JLabel lblNombre;
+	private JLabel lblApellidos;
+	private JLabel lblFecha_nac;
+	private JLabel lblSexo;
+	private JLabel lblCrearPass;
 
 	public Login() {
 		setLayout(null);

@@ -9,8 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 public class PlazasBilletes extends JPanel {
-	//VAMOS A CREAR TODAS LAS VENTANAS COMO JPANEL, YA ESTAN TODAS CONECTADAS A LA CLASE VISTA
+	
 	public JButton btnPagar = new JButton("Pagar");
+	public JTextPane textPrecioBillete = new JTextPane();
+	public JTextPane textPlazasDisponibles = new JTextPane();
 	
 	public PlazasBilletes() {
 		
@@ -31,11 +33,9 @@ public class PlazasBilletes extends JPanel {
 		lblPlazasBilletes.setBounds(118, 11, 199, 25);
 		add(lblPlazasBilletes);
 		
-		JTextPane textPlazasDisponibles = new JTextPane();
 		textPlazasDisponibles.setBounds(91, 116, 40, 25);
 		add(textPlazasDisponibles);
-		
-		JTextPane textPrecioBillete = new JTextPane();
+				
 		textPrecioBillete.setBounds(213, 116, 40, 25);
 		add(textPrecioBillete);
 		
