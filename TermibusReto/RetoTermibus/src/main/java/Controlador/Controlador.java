@@ -27,4 +27,12 @@ public class Controlador {
 			}
 		});
 	}
+	
+	public void initializeButtons() {
+		this.vista.login.btnRegistro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+	}
 }
