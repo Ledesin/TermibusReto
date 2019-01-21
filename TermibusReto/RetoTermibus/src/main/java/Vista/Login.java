@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Login extends JPanel {
 	
@@ -23,6 +25,9 @@ public class Login extends JPanel {
 	public JTextField textFieldLoginPass;
 	public JButton btnLogin;
 	public JButton btnRegistro;
+	public ButtonGroup grupo;		
+	public JRadioButton rdbtnHombre;
+	public JRadioButton rdbtnMujer;
 	private JLabel lblLoginDNI;
 	private JLabel lblPasswordLogin;
 	private JLabel lblNewLabel;
@@ -32,7 +37,7 @@ public class Login extends JPanel {
 	private JLabel lblApellidos;
 	private JLabel lblFecha_nac;
 	private JLabel lblSexo;
-	private JLabel lblCrearPass;
+	private JLabel lblCrearPass;	
 
 	public Login() {
 		setLayout(null);
@@ -57,12 +62,12 @@ public class Login extends JPanel {
 		add(textFieldFecha_nac);
 		textFieldFecha_nac.setColumns(10);
 		
-		ButtonGroup grupo = new ButtonGroup();		
-		JRadioButton rdbtnHombre = new JRadioButton("Hombre");
+		grupo = new ButtonGroup();
+		rdbtnHombre = new JRadioButton("Hombre");
 		rdbtnHombre.setBackground(new Color(34, 113, 179));
 		rdbtnHombre.setBounds(166, 113, 86, 23);
-		add(rdbtnHombre);		
-		JRadioButton rdbtnMujer = new JRadioButton("Mujer");
+		add(rdbtnHombre);	
+		rdbtnMujer = new JRadioButton("Mujer");
 		rdbtnMujer.setBackground(new Color(34, 113, 179));
 		rdbtnMujer.setBounds(166, 139, 86, 23);
 		add(rdbtnMujer);		

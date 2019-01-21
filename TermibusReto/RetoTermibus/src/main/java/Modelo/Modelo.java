@@ -5,6 +5,7 @@ public class Modelo {
 	public GestorBD gestorBD;
 	
 	public Modelo() {
+		this.gestorBD = new GestorBD();
 		
 	}
 
