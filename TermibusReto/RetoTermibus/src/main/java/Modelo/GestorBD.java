@@ -7,14 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.ButtonModel;
+
 public class GestorBD {
 	private Connection conexion;
 	private Statement statement = null;
 	private PreparedStatement preparedstatement = null;
-	private ResultSet resultSet = null;
 	
-<<<<<<< HEAD
+
 	public GestorBD() {
+		conexion = null;
+	}
+	public void conectar()throws Exception {
 		try {
 			
 		Class.forName("com.mysql.jdbc.Driver");
@@ -30,35 +34,23 @@ public class GestorBD {
 		}
 		catch(SQLException e) {e.printStackTrace();}
 		catch(ClassNotFoundException e) {e.printStackTrace();}
-		catch(Exception e) {e.printStackTrace();}
+		catch(Exception e) {e.printStackTrace();}		
 			
 	}	
-=======
-	public void gestorDB() {
-		connect=null;
-	}
-	public void conectar() throws Exception {
-	    try {
-	        // This will load the MySQL driver, each DB has its own driver
-	        Class.forName("com.mysql.cj.jdbc.Driver");
-	        
-	        // Setup the connection with the DB
-	        connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/termibus?serverTimezone=UTC","root","elorrieta");
-	        Statement sentencia = connect.createStatement();
-	       
-	    } catch (Exception e) {
-	        
-	    	e.printStackTrace();
-	    } 
->>>>>>> cf87fd3fbcb20408faa85c57297a512e288f302a
+
 	
-	public void insertarUsuario() {
+	public void insertarUsuario(String dni, String nombre, String apellidos, String fecha_nac, String sexo, char[] password) {
 		try {
 			statement = conexion.createStatement();
 			
 			preparedstatement = conexion
-					.prepareStatement("insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contraseña) values(\""")");
-					
+					.prepareStatement("insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contraseña) "
+							+ "values(dni.getText(), nombre.getText(), apellidos.getText(), fecha_nac.getText(), "
+							+ "sexo.getText(), password.getPassword()");
+			
+			//+  values(textFieldDNI.getText(), textFieldNombre.getText(), textFieldApellidos.getText(), 
+			//	textFieldFecha_nac.getText(),buttongroup.getSelected(), passwordFieldCrearPass.getPassword());
+		
 					preparedstatement.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -67,9 +59,7 @@ public class GestorBD {
 	
 	public void cerrarConexion() {
 		try {
-			if(resultSet!=null) {
-				resultSet.close();
-			}
+			
 			if(statement!=null) {
 				statement.close();
 			}

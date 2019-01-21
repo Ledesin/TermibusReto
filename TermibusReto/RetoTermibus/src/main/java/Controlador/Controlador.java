@@ -39,8 +39,11 @@ public class Controlador {
 	public void botonRegistro() {
 		this.vista.login.btnRegistro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				modelo.gestorBD.insertarUsuario(vista.login.textFieldDNI.getText(), vista.login.textFieldNombre.getText(), 
+						vista.login.textFieldApellidos.getText(), vista.login.textFieldFecha_nac.getText(), 
+						vista.login.textFieldSexo.getText(), vista.login.passwordFieldCrearPass.getPassword());
 				
-				
+				modelo.gestorBD.cerrarConexion();
 				
 				vista.ventana.setContentPane(vista.lineas);
 				vista.ventana.setVisible(true);
