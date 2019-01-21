@@ -22,7 +22,7 @@ public class GestorBD {
 	        
 	        // Setup the connection with the DB
 	        connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/termibus?serverTimezone=UTC","root","elorrieta");
-	         
+	        Statement sentencia = connect.createStatement();
 	       
 	    } catch (Exception e) {
 	        
