@@ -61,7 +61,7 @@ public class Login extends JPanel {
 		textFieldFecha_nac.setColumns(10);
 		
 		
-		textFieldSexo = new JTextField("Hombre");
+		textFieldSexo = new JTextField("V/M");
 		textFieldSexo.setBackground(new Color(34, 113, 179));
 		textFieldSexo.setBounds(166, 113, 86, 23);
 		add(textFieldSexo);					
