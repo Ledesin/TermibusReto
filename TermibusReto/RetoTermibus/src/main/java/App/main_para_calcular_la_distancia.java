@@ -1,6 +1,13 @@
-package Modelo;
+package App;
 
-public class Precio_Billetes {
+public class main_para_calcular_la_distancia {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+// Distancia Bilbao-Madrid
+		System.out.println(distanciaCoord(43.257, -2.9234443,40.4167,-3.70325));
+
+	}
 	public static double distanciaCoord(double lat1, double lng1, double lat2, double lng2) {  
         //double radioTierra = 3958.75;//en millas  
         double radioTierra = 6371;//en kilómetros  
@@ -14,6 +21,5 @@ public class Precio_Billetes {
         double distancia = radioTierra * va2;  
    
         return distancia;  
-    }  
-}
+    }  }
 
