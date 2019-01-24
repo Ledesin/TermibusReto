@@ -13,6 +13,7 @@ public class GestorBD {
 	private Statement statement = null;
 	private PreparedStatement preparedstatement = null;
 	private ResultSet result;
+	public Object dataSource;//ESTO LO HA PUESTO MARIA
 	
 
 	public GestorBD() {

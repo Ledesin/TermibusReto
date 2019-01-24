@@ -1,5 +1,6 @@
 package Vista;
 
+import Modelo.Linea;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -9,27 +10,44 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 
 public class Lineas extends JPanel {
+	
+	Linea metodoGestorBD = new Linea();
+	
+	int var = 0;
 
+	private JComboBox cbox_lineas;
+
+	public Lineas() {
+        
+        
+        initComponents();
+        
+        //Cargamos nuestro ComboBox con información de la BD
+        metodoGestorBD.consultar_lineas(cbox_lineas);
+        
+    }
 	/**
 	 * Create the panel.
 	 */
-	public Lineas() {
+	private void initComponents() {
+
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
 		
 		JLabel lblEscoger = new JLabel("Escoge la linea");
 		lblEscoger.setForeground(Color.WHITE);
-		lblEscoger.setBounds(144, 41, 82, 14);
+		lblEscoger.setBounds(144, 41, 154, 14);
 		add(lblEscoger);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3"}));
+		comboBox.setModel(metodoGestorBD.consultar_lineas(cbox_lineas));
+		//comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3"}));
 		comboBox.setBounds(145, 66, 153, 20);
 		add(comboBox);
 	
 		JLabel lblEscogeParadaOrigen = new JLabel("Escoge parada origen");
 		lblEscogeParadaOrigen.setForeground(Color.WHITE);
-		lblEscogeParadaOrigen.setBounds(21, 118, 130, 14);
+		lblEscogeParadaOrigen.setBounds(21, 118, 154, 14);
 		add(lblEscogeParadaOrigen);
 
 		JComboBox comboBox_1 = new JComboBox();
@@ -39,7 +57,7 @@ public class Lineas extends JPanel {
 		
 		JLabel lblEscogeParadaDestino = new JLabel("Escoge parada destino");
 		lblEscogeParadaDestino.setForeground(Color.WHITE);
-		lblEscogeParadaDestino.setBounds(235, 118, 130, 14);
+		lblEscogeParadaDestino.setBounds(235, 118, 168, 14);
 		add(lblEscogeParadaDestino);
 		
 		JComboBox comboBox_2 = new JComboBox();
@@ -49,7 +67,7 @@ public class Lineas extends JPanel {
 		
 		JLabel lblEscogeLaFecha = new JLabel("Escoge la fecha del viaje:");
 		lblEscogeLaFecha.setForeground(Color.WHITE);
-		lblEscogeLaFecha.setBounds(21, 191, 130, 14);
+		lblEscogeLaFecha.setBounds(21, 191, 175, 14);
 		add(lblEscogeLaFecha);
 		
 		JComboBox comboBox_3 = new JComboBox();
