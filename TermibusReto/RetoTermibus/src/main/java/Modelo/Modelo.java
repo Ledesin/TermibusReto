@@ -3,12 +3,12 @@ package Modelo;
 public class Modelo {
 	public Precio_Billetes precio_billetes;
 	public GestorBD gestorBD;
-	public UsuarioLogin usuariologin;
+	public Linea linea;
+	
 	
 	public Modelo() {
 		this.gestorBD = new GestorBD();
-		this.usuariologin = new UsuarioLogin();
-		
+		this.linea = new Linea();
 	}
 
 }

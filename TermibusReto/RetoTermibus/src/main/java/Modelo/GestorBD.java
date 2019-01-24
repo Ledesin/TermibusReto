@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JComboBox;
+
 
 public class GestorBD {
 	private Connection conexion;
@@ -18,8 +20,10 @@ public class GestorBD {
 
 	public GestorBD() {
 		conexion = null;
+		conectar();
 	}
-	public void conectar()throws Exception {
+	
+	public void conectar(){
 		try {
 			
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -58,6 +62,24 @@ public class GestorBD {
 		}
 	}
 	
+	public JComboBox getLineasBD() {
+		ResultSet rs = null;
+		JComboBox cbox_lineas = null;
+		try {
+			statement = conexion.createStatement();
+			String sentencia = "SELECT * FROM linea";
+			System.out.println(sentencia);
+			rs =  preparedstatement.executeQuery(sentencia);
+			cbox_lineas.addItem("Seleccione una opción");
+			while(rs.next()){
+				cbox_lineas.addItem(rs.getString("Nombre"));  
+			}
+			return cbox_lineas;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return cbox_lineas;
+		}
+	}
 	
 	
 	public void cerrarConexion() {

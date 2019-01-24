@@ -4,8 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
+import java.sql.ResultSet;
 import javax.swing.ButtonModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.text.Keymap;
 
@@ -34,27 +35,20 @@ public class Controlador {
 		});
 		
 		this.vista.login.btnRegistro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					modelo.gestorBD.conectar();
-				} catch (Exception e1) {
-					
-					e1.printStackTrace();
-				}
-				
+			public void actionPerformed(ActionEvent e) {		
 				modelo.gestorBD.insertarUsuario(vista.login.textFieldDNI.getText(), vista.login.textFieldNombre.getText(), 
 						vista.login.textFieldApellidos.getText(), vista.login.textFieldFecha_nac.getText(), 
 						vista.login.textFieldSexo.getText(), vista.login.passwordFieldCrearPass.getPassword());
-				
-				modelo.gestorBD.cerrarConexion();
 				JOptionPane.showMessageDialog(null, "Usuario creado con exito, Logueate");				
 			}
 		});
 		
 		this.vista.login.btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//if login correct
+				JComboBox combo_lineas = modelo.gestorBD.getLineasBD();
 				
-				
+				//else volver a pedirlo
 			}
 		});
 		
