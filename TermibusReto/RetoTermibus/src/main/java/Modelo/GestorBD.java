@@ -82,6 +82,32 @@ public class GestorBD {
 	}
 	
 	
+	/*
+	 * 
+	 * public textPlazasDisponibles getPlazasLibresBD() {
+		ResultSet rs = null;
+		textPlazasDisponibles plazaslibres = null;
+		try {
+			statement = conexion.createStatement();
+			String sentencia = "SELECT * FROM N_plazas";
+			System.out.println(sentencia);
+			rs =  preparedstatement.executeQuery(sentencia);
+			plazaslibres.addItem("Seleccione una opción");
+			while(rs.next()){
+				cbox_lineas.addItem(rs.getString("Nombre"));  
+			}
+			return plazaslibres;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return plazaslibres;
+		}
+	}
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
 	public void cerrarConexion() {
 		try {
 			

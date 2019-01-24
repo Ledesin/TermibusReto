@@ -3,6 +3,8 @@ package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JComboBox;
+
 import Modelo.Modelo;
 import Vista.Vista;
 
@@ -65,7 +67,14 @@ public void initializeEvents() {
 		
 		
 		
-		
+		this.vista.login.btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//if login correct
+				lblPlazasDisponibles plazaslibres = modelo.gestorBD.getLineasBD();
+				
+				//else volver a pedirlo
+			}
+		});
 	
 	
 	

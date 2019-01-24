@@ -4,19 +4,27 @@ import java.awt.Font;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import Modelo.Linea;
+
 public class PlazasBilletes extends JPanel {
+	PlazasBilletes metodoGestorBD = new PlazasBilletes();
 	
 	public JButton btnPagar = new JButton("Pagar");
 	public JTextPane textPrecioBillete = new JTextPane();
 	public JTextPane textPlazasDisponibles = new JTextPane();
 	
+	private textPlazasDisponibles plazaslibres;
+	
 	public PlazasBilletes() {
 		
 		setLayout(null);
+		
+		  metodoGestorBD.consultar_lineas(plazaslibres);
 
 		JLabel lblPlazasDisponibles = new JLabel("Plazas Disponibles");
 		lblPlazasDisponibles.setBounds(56, 99, 123, 17);
