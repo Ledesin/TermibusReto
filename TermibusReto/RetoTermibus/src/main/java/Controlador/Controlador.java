@@ -43,10 +43,10 @@ public class Controlador {
 			}
 		});
 		
-		this.vista.login.btnLogin.addActionListener(new ActionListener() {
+		this.vista.login.btnLogin.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				//if login correct
-				JComboBox combo_lineas = modelo.gestorBD.getLineasBD();
+				//JComboBox combo_lineas = modelo.gestorBD.getLineasBD();
 				
 				//else volver a pedirlo
 			}

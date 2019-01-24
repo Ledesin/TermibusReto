@@ -10,22 +10,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 
 public class Lineas extends JPanel {
-	
-	Linea metodoGestorBD = new Linea();
-	
-	int var = 0;
-
-	private JComboBox cbox_lineas;
-
-	public Lineas() {
-        
-        
-        initComponents();
-        
-        //Cargamos nuestro ComboBox con información de la BD
-        metodoGestorBD.consultar_lineas(cbox_lineas);
-        
-    }
 	/**
 	 * Create the panel.
 	 */
@@ -40,8 +24,8 @@ public class Lineas extends JPanel {
 		add(lblEscoger);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(metodoGestorBD.consultar_lineas(cbox_lineas));
-		//comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3"}));
+		//comboBox.setModel(metodoGestorBD.consultar_lineas(cbox_lineas));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3"}));
 		comboBox.setBounds(145, 66, 153, 20);
 		add(comboBox);
 	
