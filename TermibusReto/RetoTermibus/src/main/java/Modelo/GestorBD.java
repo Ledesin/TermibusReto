@@ -83,7 +83,7 @@ public class GestorBD {
 	}
 	
 	
-<<<<<<< HEAD
+
 	public boolean introducirLogin(String logindni, char[] pass) {
 		String passText=new String(pass);
 		String sentencia = "select * from cliente where DNI=\""+logindni+"\" and Contraseña=\""+passText+"\"";
@@ -99,7 +99,7 @@ public class GestorBD {
 	}
 	
 	
-=======
+
 	/*
 	 * 
 	 * public textPlazasDisponibles getPlazasLibresBD() {
@@ -124,7 +124,7 @@ public class GestorBD {
 	 * 
 	 * 
 	 */
->>>>>>> 32b102346dfbcabb9a5229fd3272f8d69728c197
+
 	
 	
 	public void cerrarConexion() {

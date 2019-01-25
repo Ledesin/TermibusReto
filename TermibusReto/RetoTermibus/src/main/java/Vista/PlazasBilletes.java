@@ -18,13 +18,13 @@ public class PlazasBilletes extends JPanel {
 	public JTextPane textPrecioBillete = new JTextPane();
 	public JTextPane textPlazasDisponibles = new JTextPane();
 	
-	private textPlazasDisponibles plazaslibres;
+	private JTextPane plazaslibres = new JTextPane();;
 	
 	public PlazasBilletes() {
 		
 		setLayout(null);
 		
-		  metodoGestorBD.consultar_lineas(plazaslibres);
+		 
 
 		JLabel lblPlazasDisponibles = new JLabel("Plazas Disponibles");
 		lblPlazasDisponibles.setBounds(56, 99, 123, 17);
