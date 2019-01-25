@@ -83,6 +83,7 @@ public class GestorBD {
 	}
 	
 	
+<<<<<<< HEAD
 	public boolean introducirLogin(String logindni, char[] pass) {
 		String passText=new String(pass);
 		String sentencia = "select * from cliente where DNI=\""+logindni+"\" and Contraseña=\""+passText+"\"";
@@ -98,6 +99,32 @@ public class GestorBD {
 	}
 	
 	
+=======
+	/*
+	 * 
+	 * public textPlazasDisponibles getPlazasLibresBD() {
+		ResultSet rs = null;
+		textPlazasDisponibles plazaslibres = null;
+		try {
+			statement = conexion.createStatement();
+			String sentencia = "SELECT * FROM N_plazas";
+			System.out.println(sentencia);
+			rs =  preparedstatement.executeQuery(sentencia);
+			plazaslibres.addItem("Seleccione una opción");
+			while(rs.next()){
+				cbox_lineas.addItem(rs.getString("Nombre"));  
+			}
+			return plazaslibres;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return plazaslibres;
+		}
+	}
+	 * 
+	 * 
+	 * 
+	 */
+>>>>>>> 32b102346dfbcabb9a5229fd3272f8d69728c197
 	
 	
 	public void cerrarConexion() {
