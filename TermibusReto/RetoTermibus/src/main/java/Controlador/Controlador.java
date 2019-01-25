@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import javax.swing.ButtonModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.text.Keymap;
 
 import Modelo.Modelo;
@@ -45,10 +46,15 @@ public class Controlador {
 		
 		this.vista.login.btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//if login correct
-				JComboBox combo_lineas = modelo.gestorBD.getLineasBD();
-				
-				//else volver a pedirlo
+				if(modelo.gestorBD.introducirLogin(vista.login.textFieldLoginDNI.getText(), vista.login.passwordFieldLoginPass.getPassword())==false) {
+					JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos...");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Logueado correctamente...");
+					vista.ventana.setContentPane(vista.lineas);
+					vista.ventana.setVisible(true);
+				}
+				 
 			}
 		});
 		

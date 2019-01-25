@@ -22,7 +22,7 @@ public class Login extends JPanel {
 	public JTextField textFieldFecha_nac;
 	public JPasswordField passwordFieldCrearPass;
 	public JTextField textFieldLoginDNI;
-	public JTextField textFieldLoginPass;
+	public JPasswordField passwordFieldLoginPass;
 	public JButton btnLogin;
 	public JButton btnRegistro;		
 	public JTextField textFieldSexo;
@@ -99,10 +99,10 @@ public class Login extends JPanel {
 		add(textFieldLoginDNI);
 		textFieldLoginDNI.setColumns(10);
 		
-		textFieldLoginPass = new JTextField();
-		textFieldLoginPass.setBounds(166, 231, 86, 20);
-		add(textFieldLoginPass);
-		textFieldLoginPass.setColumns(10);
+		passwordFieldLoginPass = new JPasswordField();
+		passwordFieldLoginPass.setBounds(166, 231, 86, 20);
+		add(passwordFieldLoginPass);
+		passwordFieldLoginPass.setColumns(10);
 		
 		btnRegistro = new JButton("Registrar");
 		btnRegistro.setBackground(Color.GRAY);

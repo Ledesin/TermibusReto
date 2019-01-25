@@ -45,13 +45,14 @@ public class GestorBD {
 
 	
 	public void insertarUsuario(String dni, String nombre, String apellidos, String fecha_nac, String sexo, char[] password) {
+			String passText=new String(password);
+			
 		try {
 			statement = conexion.createStatement();
 			String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contraseña) "
-					+ "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+password.toString()+"\")";
+					+ "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+passText+"\")";
 			System.out.println(sentencia);
-			preparedstatement = conexion
-					.prepareStatement(sentencia);
+			preparedstatement = conexion.prepareStatement(sentencia);
 			
 			//+  values(textFieldDNI.getText(), textFieldNombre.getText(), textFieldApellidos.getText(), 
 			//	textFieldFecha_nac.getText(),buttongroup.getSelected(), passwordFieldCrearPass.getPassword());
@@ -80,6 +81,23 @@ public class GestorBD {
 			return cbox_lineas;
 		}
 	}
+	
+	
+	public boolean introducirLogin(String logindni, char[] pass) {
+		String passText=new String(pass);
+		String sentencia = "select * from cliente where DNI=\""+logindni+"\" and Contraseña=\""+passText+"\"";
+		try {
+			statement = conexion.createStatement();
+			result = statement.executeQuery(sentencia);
+			System.out.println(sentencia);
+			return result.first();
+		}catch(Exception error) {
+		error.printStackTrace();
+		}
+		return false;
+	}
+	
+	
 	
 	
 	public void cerrarConexion() {
