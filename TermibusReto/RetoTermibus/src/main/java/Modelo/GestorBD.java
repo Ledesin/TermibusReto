@@ -9,7 +9,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
+<<<<<<< HEAD
 import Vista.Lineas;
+=======
+import javax.swing.JOptionPane;
+
+>>>>>>> 5000450bb0010e048bfe8672c1a704082409460f
 
 public class GestorBD {
     private Connection conexion;
@@ -18,6 +23,7 @@ public class GestorBD {
     private ResultSet result;
     
 
+<<<<<<< HEAD
     public GestorBD() {
         conexion = null;
         conectar();
@@ -42,6 +48,52 @@ public class GestorBD {
         catch(Exception e) {e.printStackTrace();}        
             
     }    
+=======
+	
+	public void insertarUsuario(String dni, String nombre, String apellidos, String fecha_nac, String sexo, char[] password) {
+			String passText=new String(password);
+			
+		try {
+			statement = conexion.createStatement();
+			String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contraseña) "
+					+ "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+passText+"\")";
+			if(dni.equals("") || nombre.equals("") ||apellidos.equals("") || fecha_nac.equals("") || sexo.equals("") || passText.equals(""))
+				JOptionPane.showMessageDialog(null, "Es necesario rellenar todos los campos...");
+			else {
+			System.out.println(sentencia);
+			preparedstatement = conexion.prepareStatement(sentencia);
+			}
+			
+			//+  values(textFieldDNI.getText(), textFieldNombre.getText(), textFieldApellidos.getText(), 
+			//	textFieldFecha_nac.getText(),buttongroup.getSelected(), passwordFieldCrearPass.getPassword());
+		
+					preparedstatement.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public JComboBox getLineasBD() {
+		ResultSet rs = null;
+		JComboBox cbox_lineas = null;
+		try {
+			statement = conexion.createStatement();
+			String sentencia = "SELECT * FROM linea";
+			System.out.println(sentencia);
+			rs =  preparedstatement.executeQuery(sentencia);
+			cbox_lineas.addItem("Seleccione una opción");
+			while(rs.next()){
+				cbox_lineas.addItem(rs.getString("Nombre"));  
+			}
+			return cbox_lineas;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return cbox_lineas;
+		}
+	}
+	
+	
+>>>>>>> 5000450bb0010e048bfe8672c1a704082409460f
 
     
     public void insertarUsuario(String dni, String nombre, String apellidos, String fecha_nac, String sexo, char[] password) {

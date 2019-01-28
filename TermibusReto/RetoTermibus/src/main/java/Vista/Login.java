@@ -63,29 +63,15 @@ public class Login extends JPanel {
 		textFieldDNI.setColumns(10);
 		
 		
-		MaskFormatter formatternombre = null;
-		try {
-			formatternombre = new MaskFormatter("UUUUUUUUUUUU");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		formatternombre.setPlaceholderCharacter('_');
-		textFieldNombre = new JFormattedTextField(formatternombre);
+		
+		textFieldNombre = new JFormattedTextField();
 		textFieldNombre.setBounds(166, 67, 86, 20);
 		add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
 		
-		MaskFormatter formatterapellidos = null;
-		try {
-			formatterapellidos = new MaskFormatter("UUUUUUUUUUUU");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		formatterapellidos.setPlaceholderCharacter('_');
-		textFieldApellidos = new JFormattedTextField(formatterapellidos);
+		
+		textFieldApellidos = new JFormattedTextField();
 		textFieldApellidos.setBounds(296, 67, 86, 20);
 		add(textFieldApellidos);
 		textFieldApellidos.setColumns(10);
@@ -108,15 +94,8 @@ public class Login extends JPanel {
 		}
 		
 		
-		MaskFormatter formattersexo = null;
-		try {
-			formattersexo = new MaskFormatter("U");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		formattersexo.setPlaceholderCharacter('_');
-		textFieldSexo = new JFormattedTextField(formattersexo);
+		
+		textFieldSexo = new JFormattedTextField();
 		textFieldSexo.setBackground(new Color(34, 113, 179));
 		textFieldSexo.setBounds(166, 113, 86, 23);
 		add(textFieldSexo);					
