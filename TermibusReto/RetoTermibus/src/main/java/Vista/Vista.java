@@ -7,8 +7,14 @@ public class Vista{
 	public Ventana ventana = new Ventana();
 	public Bienvenida bienvenida = new Bienvenida();
 	public Login login = new Login();
-	public PlazasBilletes plazasbilletes = new PlazasBilletes();
-	public Lineas lineas = new Lineas();
+	public Lineas lineas = new Lineas();	
+	public Pagar pagar = new Pagar();
+	
+	
+	
+	
+	
+	
 	
 	public Vista() {
 		mostrarPanel(bienvenida);

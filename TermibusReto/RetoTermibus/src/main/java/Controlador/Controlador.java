@@ -4,9 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.sql.ResultSet;
-import javax.swing.ButtonModel;
-import javax.swing.JComboBox;
+
 import javax.swing.JOptionPane;
 import javax.swing.text.Keymap;
 
@@ -34,6 +32,8 @@ public class Controlador {
 			}
 		});
 		
+		
+		
 		this.vista.login.btnRegistro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {		
 				modelo.gestorBD.insertarUsuario(vista.login.textFieldDNI.getText(), vista.login.textFieldNombre.getText(), 
@@ -45,12 +45,26 @@ public class Controlador {
 		
 		this.vista.login.btnLogin.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
+
 				//if login correct
 				//JComboBox combo_lineas = modelo.gestorBD.getLineasBD();
 				
 				//else volver a pedirlo
+
+				if(modelo.gestorBD.introducirLogin(vista.login.textFieldLoginDNI.getText(), vista.login.passwordFieldLoginPass.getPassword())==false) {
+					JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos...");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Logueado correctamente...");
+					vista.ventana.setContentPane(vista.lineas);
+					vista.ventana.setVisible(true);
+				}
+				 
+
 			}
 		});
+		
+		
 		
 	}
 	
