@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 
 public class GestorBD {
@@ -51,8 +52,12 @@ public class GestorBD {
 			statement = conexion.createStatement();
 			String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contraseña) "
 					+ "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+passText+"\")";
+			if(dni.equals("") || nombre.equals("") ||apellidos.equals("") || fecha_nac.equals("") || sexo.equals("") || passText.equals(""))
+				JOptionPane.showMessageDialog(null, "Es necesario rellenar todos los campos...");
+			else {
 			System.out.println(sentencia);
 			preparedstatement = conexion.prepareStatement(sentencia);
+			}
 			
 			//+  values(textFieldDNI.getText(), textFieldNombre.getText(), textFieldApellidos.getText(), 
 			//	textFieldFecha_nac.getText(),buttongroup.getSelected(), passwordFieldCrearPass.getPassword());
