@@ -26,12 +26,14 @@ public class Login extends JPanel {
 	public JFormattedTextField textFieldNombre;
 	public JFormattedTextField textFieldApellidos;
 	public JFormattedTextField textFieldFecha_nac;
+	public ButtonGroup sexo;
+	public JRadioButton rdbtnHombre;
+	public JRadioButton rdbtnMujer;
 	public JPasswordField passwordFieldCrearPass;
 	public JFormattedTextField textFieldLoginDNI;
 	public JPasswordField passwordFieldLoginPass;
 	public JButton btnLogin;
 	public JButton btnRegistro;		
-	public JFormattedTextField textFieldSexo;
 	private JLabel lblLoginDNI;
 	private JLabel lblPasswordLogin;
 	private JLabel lblNewLabel;
@@ -93,13 +95,18 @@ public class Login extends JPanel {
 		    ex.printStackTrace();
 		}
 		
+		sexo = new ButtonGroup();
+		rdbtnHombre = new JRadioButton("New radio button");
+		rdbtnHombre.setBounds(158, 113, 109, 23);
+		rdbtnHombre.setActionCommand("V");
+		add(rdbtnHombre);
 		
-		
-		textFieldSexo = new JFormattedTextField();
-		textFieldSexo.setBackground(new Color(34, 113, 179));
-		textFieldSexo.setBounds(166, 113, 86, 23);
-		add(textFieldSexo);					
-		
+		rdbtnMujer = new JRadioButton("New radio button");
+		rdbtnMujer.setBounds(158, 139, 109, 23);
+		rdbtnHombre.setActionCommand("M");
+		add(rdbtnMujer);
+		sexo.add(rdbtnHombre);
+		sexo.add(rdbtnMujer);
 
 		passwordFieldCrearPass = new JPasswordField();
 		passwordFieldCrearPass.setBounds(296, 114, 86, 20);

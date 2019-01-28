@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+
 import Vista.Lineas;
 
 public class GestorBD {
@@ -34,7 +36,7 @@ public class GestorBD {
             System.out.println("Conexión establecida a la base de datos");
         }
         else 
-            System.out.println("Conexiónn fallida");
+            System.out.println("Conexión fallida");
             
         }
         catch(SQLException e) {e.printStackTrace();}
@@ -51,13 +53,18 @@ public class GestorBD {
             statement = conexion.createStatement();
             String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contraseña) "
                     + "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+passText+"\")";
-            System.out.println(sentencia);
-            preparedstatement = conexion.prepareStatement(sentencia);
-            
+            if (dni.equals("") || nombre.equals("") || apellidos.equals("") || fecha_nac.equals("") || sexo.equals("") || passText.equals("")) {
+            	JOptionPane.showMessageDialog(null, "Debes rellenar todos los campos...");
+            }else{
+	            System.out.println(sentencia);
+	            preparedstatement = conexion.prepareStatement(sentencia);
+	            preparedstatement.executeUpdate();
+	            JOptionPane.showMessageDialog(null, "Usuario creado con exito, Logueate");
+            }
             //+  values(textFieldDNI.getText(), textFieldNombre.getText(), textFieldApellidos.getText(), 
             //    textFieldFecha_nac.getText(),buttongroup.getSelected(), passwordFieldCrearPass.getPassword());
         
-                    preparedstatement.executeUpdate();
+                   
         }catch(Exception e) {
             e.printStackTrace();
         }
@@ -118,9 +125,9 @@ public class GestorBD {
             System.out.println(sentencia);
             return result.first();
         }catch(Exception error) {
-        error.printStackTrace();
+        	error.printStackTrace();
         }
-        return false;
+        	return false;
     }
     
         

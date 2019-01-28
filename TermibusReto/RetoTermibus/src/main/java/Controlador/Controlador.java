@@ -38,8 +38,7 @@ public class Controlador {
 			public void actionPerformed(ActionEvent e) {		
 				modelo.gestorBD.insertarUsuario(vista.login.textFieldDNI.getText(), vista.login.textFieldNombre.getText(), 
 						vista.login.textFieldApellidos.getText(), vista.login.textFieldFecha_nac.getText(), 
-						vista.login.textFieldSexo.getText(), vista.login.passwordFieldCrearPass.getPassword());
-				JOptionPane.showMessageDialog(null, "Usuario creado con exito, Logueate");				
+						vista.login.sexo.getSelection().getActionCommand(), vista.login.passwordFieldCrearPass.getPassword());							
 			}
 		});
 		
