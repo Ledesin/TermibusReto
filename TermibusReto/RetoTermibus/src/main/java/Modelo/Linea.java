@@ -24,7 +24,7 @@ public class Linea {
         this.nombre = pNombre; 
     }
 
-    public String getId() {
+	public String getId() {
         return id;
     }
 

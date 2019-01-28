@@ -9,12 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
-<<<<<<< HEAD
 import Vista.Lineas;
-=======
-import javax.swing.JOptionPane;
-
->>>>>>> 5000450bb0010e048bfe8672c1a704082409460f
 
 public class GestorBD {
     private Connection conexion;
@@ -23,7 +18,6 @@ public class GestorBD {
     private ResultSet result;
     
 
-<<<<<<< HEAD
     public GestorBD() {
         conexion = null;
         conectar();
@@ -37,10 +31,10 @@ public class GestorBD {
         conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/termibus?serverTimezone=UTC", "root", "elorrieta");    
         if(conexion!=null) {
             statement = conexion.createStatement();
-            System.out.println("Conexi√≥n establecida a la base de datos");
+            System.out.println("ConexiÛn establecida a la base de datos");
         }
         else 
-            System.out.println("Conexi√≥n fallida");
+            System.out.println("ConexiÛnn fallida");
             
         }
         catch(SQLException e) {e.printStackTrace();}
@@ -48,52 +42,6 @@ public class GestorBD {
         catch(Exception e) {e.printStackTrace();}        
             
     }    
-=======
-	
-	public void insertarUsuario(String dni, String nombre, String apellidos, String fecha_nac, String sexo, char[] password) {
-			String passText=new String(password);
-			
-		try {
-			statement = conexion.createStatement();
-			String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, ContraseÒa) "
-					+ "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+passText+"\")";
-			if(dni.equals("") || nombre.equals("") ||apellidos.equals("") || fecha_nac.equals("") || sexo.equals("") || passText.equals(""))
-				JOptionPane.showMessageDialog(null, "Es necesario rellenar todos los campos...");
-			else {
-			System.out.println(sentencia);
-			preparedstatement = conexion.prepareStatement(sentencia);
-			}
-			
-			//+  values(textFieldDNI.getText(), textFieldNombre.getText(), textFieldApellidos.getText(), 
-			//	textFieldFecha_nac.getText(),buttongroup.getSelected(), passwordFieldCrearPass.getPassword());
-		
-					preparedstatement.executeUpdate();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public JComboBox getLineasBD() {
-		ResultSet rs = null;
-		JComboBox cbox_lineas = null;
-		try {
-			statement = conexion.createStatement();
-			String sentencia = "SELECT * FROM linea";
-			System.out.println(sentencia);
-			rs =  preparedstatement.executeQuery(sentencia);
-			cbox_lineas.addItem("Seleccione una opciÛn");
-			while(rs.next()){
-				cbox_lineas.addItem(rs.getString("Nombre"));  
-			}
-			return cbox_lineas;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return cbox_lineas;
-		}
-	}
-	
-	
->>>>>>> 5000450bb0010e048bfe8672c1a704082409460f
 
     
     public void insertarUsuario(String dni, String nombre, String apellidos, String fecha_nac, String sexo, char[] password) {
@@ -101,7 +49,7 @@ public class GestorBD {
             
         try {
             statement = conexion.createStatement();
-            String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, Contrase√±a) "
+            String sentencia="insert into cliente(DNI, Nombre, Apellidos, Fecha_nac, Sexo, ContraseÒa) "
                     + "values(\""+dni+"\", \""+nombre+"\", \""+apellidos+"\", \""+fecha_nac+"\", \""+sexo+"\", \""+passText+"\")";
             System.out.println(sentencia);
             preparedstatement = conexion.prepareStatement(sentencia);
@@ -117,7 +65,7 @@ public class GestorBD {
     
     
     public ArrayList<Linea> getLineasBD() {
-        //M√©todo que devuelve todas las l√≠neas de la BD
+        //Metodo que devuelve todas las lineas de la BD
         ResultSet rs = null;
         String sentencia = "SELECT * FROM linea";
         ArrayList<Linea> todasLineas = new ArrayList<Linea>();
@@ -139,7 +87,7 @@ public class GestorBD {
     }
     
     public ArrayList<Integer> getParadasBD(String idLineaEscogida) {
-        //M√©todo que devuelve todas las paradas de cada linea de la BD
+        //Metodo que devuelve todas las paradas de cada linea de la BD
         ResultSet rs = null;
         String sentencia = "SELECT Cod_Parada FROM linea-parada WHERE cod_linea = idLineaEscogida";
         ArrayList<Integer> todasParadas = new ArrayList<Integer>();
@@ -163,7 +111,7 @@ public class GestorBD {
 
     public boolean introducirLogin(String logindni, char[] pass) {
         String passText=new String(pass);
-        String sentencia = "select * from cliente where DNI=\""+logindni+"\" and Contrase√±a=\""+passText+"\"";
+        String sentencia = "select * from cliente where DNI=\""+logindni+"\" and ContraseÒa=\""+passText+"\"";
         try {
             statement = conexion.createStatement();
             result = statement.executeQuery(sentencia);
