@@ -15,28 +15,35 @@ import javax.swing.JPanel;
 import javafx.scene.control.ComboBox;
 
 public class Linea {
-    /*private String linea;
-    private String parada;
     
-    public String getLinea(String linea) {
-        return linea;
+    private String id;
+    private String nombre;
+    
+    public Linea(String pId, String pNombre) {
+        this.id = pId;
+        this.nombre = pNombre; 
     }
-    
-    public void setLinea(String linea) {
-        this.linea = linea;
+
+    public String getId() {
+        return id;
     }
-    
-    public String getParada (String parada) {
-        return parada;
+
+    public void setId(String id) {
+        this.id = id;
     }
-    
-    public void setParada (String parada) {
-        this.parada = parada;
-    }*/
-    
-    String miLinea = "select * form linea";
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 
 }
+
+
 
 
 
