@@ -19,7 +19,7 @@ import javax.swing.JTextPane;
 public class Pagar extends JPanel {
 	
 	public JButton imprimirtxt = new JButton("Imprimir");
-	public JButton btnNewButton = new JButton("Comprar Otro Billete");
+	public JButton BOTONcoprarOtroBillete = new JButton("Comprar Otro Billete");
 	public JButton btnPagar = new JButton("Pagar");
 	public JTextPane textPane = new JTextPane();
 	
@@ -79,8 +79,8 @@ public class Pagar extends JPanel {
 			
 			
 			
-		btnNewButton.setBounds(281, 233, 139, 23);
-		add(btnNewButton);
+		BOTONcoprarOtroBillete.setBounds(281, 233, 139, 23);
+		add(BOTONcoprarOtroBillete);
 		
 		
 		

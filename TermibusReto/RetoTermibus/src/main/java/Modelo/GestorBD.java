@@ -114,6 +114,27 @@ public class GestorBD {
     }
     
     
+    public ArrayList<Linea> seleccionar() throws Exception {
+        ArrayList<Linea> misLineas=new ArrayList<Linea>();
+
+	    try {
+	    	//conectar();
+	        // Statements allow to issue SQL queries to the database
+	        statement = conexion.createStatement();
+	        // Result set get the result of the SQL query
+	        result = statement
+	                .executeQuery("select * from linea");
+		    while (result.next()) {
+		    	misLineas.add(new Linea(result.getString("Cod_Linea"),result.getString("Nombre")));
+		        
+		    }
+	
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    }
+	   // close();
+	    return misLineas;
+    }
     
 
     public boolean introducirLogin(String logindni, char[] pass) {

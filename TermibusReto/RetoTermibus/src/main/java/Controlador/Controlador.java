@@ -2,13 +2,11 @@ package Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.text.Keymap;
-
+import Modelo.Linea;
 import Modelo.Modelo;
+import Modelo.Pagar;
 import Vista.Vista;
 
 public class Controlador {
@@ -25,10 +23,10 @@ public class Controlador {
 		this.vista.bienvenida.btnBienvenida.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//String lineas = modelo.linea.ObtenerLineas();
-				
 				vista.ventana.setContentPane(vista.login);
-				vista.ventana.setVisible(true);				
-				//.panelLinea.MostrarLineas(lineas);
+				vista.ventana.setVisible(true);	
+				//vista.ventana.setContentPane(vista.login);
+				
 			}
 		});
 		
@@ -42,21 +40,28 @@ public class Controlador {
 			}
 		});
 		
+		
+		
 		this.vista.login.btnLogin.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-
-				//if login correct
-				//JComboBox combo_lineas = modelo.gestorBD.getLineasBD();
-				
-				//else volver a pedirlo
-
 				if(modelo.gestorBD.introducirLogin(vista.login.textFieldLoginDNI.getText(), vista.login.passwordFieldLoginPass.getPassword())==false) {
 					JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos...");
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Logueado correctamente...");
+					
+					ArrayList<Linea> misLineas=new ArrayList<Linea>();
+					
+					try {
+						misLineas= modelo.gestorBD.seleccionar();
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					vista.ventana.setContentPane(vista.lineas);
-					vista.ventana.setVisible(true);
+					vista.lineas.llenarComboBoxLineas(misLineas);
+					vista.ventana.setVisible(true);				
+					//.panelLinea.MostrarLineas(lineas);
 				}
 				 
 
@@ -64,6 +69,72 @@ public class Controlador {
 		});
 		
 		
+		
+		this.vista.lineas.btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				
+				vista.ventana.setContentPane(vista.plazasbilletes);
+				vista.ventana.setVisible(true);
+			}
+		});
+		
+		
+		
+		
+		
+		this.vista.plazasbilletes.btnPagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			
+				vista.ventana.setContentPane(vista.pagar);
+				vista.ventana.setVisible(true);	
+			}
+		});	
+		
+		
+		
+		this.vista.pagar.BOTONcoprarOtroBillete.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						//link de maria 
+						ArrayList<Linea> misLineas=new ArrayList<Linea>();
+						
+						try {
+							misLineas= modelo.gestorBD.seleccionar();
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						vista.ventana.setContentPane(vista.lineas);
+						vista.lineas.llenarComboBoxLineas(misLineas);
+						vista.ventana.setVisible(true);				
+						//.panelLinea.MostrarLineas(lineas);
+					}
+					});
+		
+		
+		
+		this.vista.pagar.btnPagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (Double.valueOf(vista.pagar.cantidadpago.getText())< Double.parseDouble(vista.plazasbilletes.textPrecioBillete.getText())) {
+					JOptionPane.showMessageDialog(vista.pagar, "Importe insuficiente");
+				}
+				else
+					vista.pagar.textPane.setText(Pagar.Vueltas(Double.valueOf(vista.pagar.cantidadpago.getText()),Double.valueOf(vista.plazasbilletes.textPrecioBillete.getText())));
+			}
+		});
+		
+		
+		
+		this.vista.pagar.imprimirtxt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
+			
 		
 	}
 	

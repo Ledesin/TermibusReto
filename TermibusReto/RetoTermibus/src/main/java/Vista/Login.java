@@ -96,12 +96,12 @@ public class Login extends JPanel {
 		}
 		
 		sexo = new ButtonGroup();
-		rdbtnHombre = new JRadioButton("New radio button");
+		rdbtnHombre = new JRadioButton("Hombre");
 		rdbtnHombre.setBounds(158, 113, 109, 23);
 		rdbtnHombre.setActionCommand("V");
 		add(rdbtnHombre);
 		
-		rdbtnMujer = new JRadioButton("New radio button");
+		rdbtnMujer = new JRadioButton("Mujer");
 		rdbtnMujer.setBounds(158, 139, 109, 23);
 		rdbtnHombre.setActionCommand("M");
 		add(rdbtnMujer);
