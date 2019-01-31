@@ -1,48 +1,22 @@
 package Modelo;
 
-import java.beans.Statement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import javax.swing.ComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
-
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
-import javafx.scene.control.ComboBox;
-
 public class Linea {
-    
-    private String id;
-    private String nombre;
-    
-    public Linea(String pId, String pNombre) {
-        this.id = pId;
-        this.nombre = pNombre; 
-    }
+	private String cod_linea;
+	private String nombre;
 
-	public String getId() {
-        return id;
-    }
+	public Linea() {
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	public Linea(String cod_linea, String nombre) {
+		this.cod_linea = cod_linea;
+		this.nombre = nombre;
+	}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-
+	public String getNombre() {
+		return nombre;
+	}
 }
-
 
 
 
