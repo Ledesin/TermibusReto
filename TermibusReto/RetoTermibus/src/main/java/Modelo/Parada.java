@@ -8,21 +8,18 @@ public class Parada {
 	private float longitud;
 	
 	
-public Parada() {
-		
-	}
-	/*public Parada(int cod_parada,String nombre, String calle, float latitud, float longitud) {
+	public Parada(int cod_parada,String nombre, String calle, float latitud, float longitud) {
 		this.cod_parada=cod_parada;
 		this.nombre=nombre;
 		this.calle = calle;
 		this.latitud = latitud;
 		this.longitud = longitud;
-	}*/
+	}
 
-	public Parada (int cod_parada, String nombre) {
+	/*public Parada (int cod_parada, String nombre) {
 		this.cod_parada = cod_parada;
 		this.nombre = nombre;
-	}
+	}*/
 
 	public int getcod_parada() {
 		return cod_parada;

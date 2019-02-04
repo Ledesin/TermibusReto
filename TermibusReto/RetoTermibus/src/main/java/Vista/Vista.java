@@ -14,6 +14,7 @@ public class Vista{
 	public Vista() {
 		mostrarPanel(bienvenida);
 		ventana.setVisible(true);
+		
 	}
 	
 	public void mostrarPanel(JPanel Bienvenida) {

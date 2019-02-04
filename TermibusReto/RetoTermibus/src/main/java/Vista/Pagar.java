@@ -33,47 +33,51 @@ public class Pagar extends JPanel {
 
 	public Pagar() { 
 		setLayout(null);
+		setSize(800,700); 
 		
 		
 			//el dinero que introduzca el usuario cantidad de dinero
 			cantidadpago = new JTextField();
-			cantidadpago.setBounds(209, 37, 86, 20);
+			cantidadpago.setBounds(84, 305, 243, 39);
 			add(cantidadpago);
 			cantidadpago.setColumns(10);
+			lblVueltas.setForeground(Color.WHITE);
 			
 	
-			lblVueltas.setFont(new Font("Tahoma", Font.BOLD, 14));
+			lblVueltas.setFont(new Font("Tahoma", Font.PLAIN, 25));
 			
 			//el label de donde esta escrito introduzca el dinero
-			JLabel lblIntroduzcaElDinero = new JLabel("Introduzca El Dinero");
-			lblIntroduzcaElDinero.setFont(new Font("Tahoma", Font.BOLD, 14));
-			lblIntroduzcaElDinero.setBounds(23, 38, 153, 14);
+			JLabel lblIntroduzcaElDinero = new JLabel("Introduzca el dinero");
+			lblIntroduzcaElDinero.setForeground(Color.WHITE);
+			lblIntroduzcaElDinero.setFont(new Font("Tahoma", Font.PLAIN, 25));
+			lblIntroduzcaElDinero.setBounds(81, 249, 258, 39);
 			add(lblIntroduzcaElDinero);
 			
 				
 		
 			// Aqui se le mostrara al Usuario el dinero que le sobra
 			add(lblVueltas);
+			lblVueltas.setBounds(81, 249, 258, 39);
 		
 			
 			
 			
 				
 			//boton imprimir 			
-			imprimirtxt.setBounds(331, 97, 89, 23);
+			imprimirtxt.setBounds(351, 598, 121, 23);
 			add(imprimirtxt);
 		
 				
 			
 			//poton pagar
-			btnPagar.setBounds(331, 36, 89, 23);
+			btnPagar.setBounds(90, 598, 89, 23);
 			add(btnPagar);
 			
 			//vueltas
-			lblVueltas.setBounds(90, 99, 86, 14);
+			lblVueltas.setBounds(476, 249, 135, 44);
 			
 			
-			Atras.setBounds(331, 160, 89, 23);
+			Atras.setBounds(599, 598, 89, 23);
 			add(Atras);
 			
 		
@@ -81,7 +85,7 @@ public class Pagar extends JPanel {
 			JLabel lblFondoLogin = new JLabel("fondo");
 			lblFondoLogin.setBackground(new Color(0, 102, 255));
 			lblFondoLogin.setIcon(new ImageIcon(Login.class.getResource("/imagenes/luzazul.jpeg")));
-			lblFondoLogin.setBounds(0, 0, 450, 300);
+			lblFondoLogin.setBounds(0, 0, 800, 700);
 			add(lblFondoLogin);
 			
 					
@@ -92,7 +96,7 @@ public class Pagar extends JPanel {
 			lbIntroducido.setBounds(281, 124, 76, 39);
 			
 			add(lbIntroducido);
-			textPane.setBounds(23, 124, 224, 132);
+			textPane.setBounds(464, 296, 224, 132);
 			add(textPane);
 
 	}	
